@@ -37,7 +37,7 @@ def multi_curl(destination, url, num_parts=10):
     sleep(2)
   status = [p.wait() for p in calls]
   print "{} downloaded in {} seconds".format(
-         (destination, datetime.now()-start).seconds)
+          destination, (datetime.now()-start).seconds)
   with open(destination, "wb") as dest:
     for part in parts:
       with open(part, "rb") as part_:
